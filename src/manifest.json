@@ -1,0 +1,21 @@
+{
+  "name": "Multi ClipBoard",
+  "description": "클립보드에 여러개 저장해서 쓰는거임",
+  "version": "1.0",
+  "manifest_version": 3,
+  "background": {
+    "service_worker": "background.js"
+  },
+  "permissions": [
+    "clipboardRead",
+    "clipboardWrite",
+    "scripting",
+    "activeTab"
+  ],
+  "action": {
+  },
+  "content_scripts": [{
+    "matches": ["*://*/*"],
+    "js": ["contentScript.js"]
+  }]
+}
