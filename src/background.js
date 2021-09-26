@@ -9,3 +9,11 @@ chrome.action.onClicked.addListener(function(tab) {
     files: ['scripts.js'],
   },);
 });
+
+chrome.commands.onCommand.addListener((command, tab) => {
+  console.log(command);
+  chrome.scripting.executeScript({
+    target: {tabId: tab.id},
+    files: ['scripts.js'],
+  },);
+});
